@@ -1,6 +1,5 @@
 # Covitine API's
-To Perform Real Time Polling In any application.
-
+To Help Covid-19 Pendamic Effected peoples by giving a way to reach out to the world.
 
 ## Features
 * Login & Registration for a user
