@@ -16,7 +16,8 @@ require('./models/question');
 require('./models/reply');
 require('./models/user')
 
-
+app.set("view engine", "ejs");
+app.use(express.static(__dirname+"/public"));
 
 app.use(cors());
 mongoose
@@ -41,6 +42,10 @@ app.use(bodyParser.json());
 app.use('/user',userRoutes);
 app.use('/question',questionRoutes);
 app.use('/reply',replyRoutes);
+
+app.get('/', (req, res)=>{
+  res.render("landing");
+});
 
 app.listen(PORT, () => {
   console.log("Server is listening at port " + PORT);
