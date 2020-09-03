@@ -44,7 +44,12 @@ UserHandler.login = async (req, res) => {
             { expiresIn: "2400h" }
         );
         user.token = token
-        res.status(200).json(user);
+        console.log(res);
+        //res.headers['set-cookies'] = token;
+        res.status(200)
+        .cookie('set-cookie',  token, {
+            expires: new Date(Date.now() + 8 * 3600000) // cookie will be removed after 8 hours
+          }).json(user);
     } catch (err) {
         const status = err.status || 500;
         const message = err.message || 'Something went wrong';

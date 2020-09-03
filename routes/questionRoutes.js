@@ -7,4 +7,5 @@ router.get('/search',questionHandler.search);
 router.post('/upvote/:id',userAuth,questionHandler.upVote)
 router.post('/downvote/:id',userAuth,questionHandler.downVote)
 router.get('/search/:id',questionHandler.getQuestion);
+
 module.exports = router;

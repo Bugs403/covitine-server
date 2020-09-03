@@ -20,6 +20,8 @@ const questionSchema = mongoose.Schema({
 
 questionSchema.plugin(uniqueValidator);
 const Question = mongoose.model("question", questionSchema);
+
+
 Question.create = async (title, description, tags, creator) => {
   title = typeof title === "string" && title.trim().length > 0 ? title : false;
   description =
