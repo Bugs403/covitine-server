@@ -47,6 +47,10 @@ app.get('/', (req, res)=>{
   res.render("landing");
 });
 
+app.get('/posts', (req,res)=>{
+  res.render("post")
+});
+
 app.listen(PORT, () => {
   console.log("Server is listening at port " + PORT);
 });

@@ -19,13 +19,16 @@ UserHandler.register = async (req, res) => {
             { expiresIn: "2400h" }
         );
         user.token = token
-        res.status(200).json(user);
+        // res.status(200).json(user);
+        res.redirect("/posts");
     } catch (err) {
         const status = err.status || 500;
         const message = err.message || 'Something went wrong';
-        res.status(status).json({
-            message
-        })
+        // res.status(status).json({
+        //     message
+        // })
+        res.render("register", {error: err.message});
+        
     }
 }
 
@@ -44,13 +47,15 @@ UserHandler.login = async (req, res) => {
             { expiresIn: "2400h" }
         );
         user.token = token
-        res.status(200).json(user);
+        // res.status(200).json(user);
+        res.redirect("/posts");
     } catch (err) {
         const status = err.status || 500;
         const message = err.message || 'Something went wrong';
-        res.status(status).json({
-            message
-        })
+        // res.status(status).json({
+        //     message
+        // })
+        res.render("login", {error: err.message});
     }
 }
 
