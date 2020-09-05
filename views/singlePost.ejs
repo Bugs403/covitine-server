@@ -9,21 +9,22 @@
    <img src="https://avatars1.githubusercontent.com/u/1109686?v=4&s=460" class="avatar" alt="Post avatar" />
   </figure>
   <div class="content">
-   <h3> Sabarinathan Masilamani </h3>
+   <h3> <%= question.creator.displayName %> </h3>
+   <h4><%= question.title %></h4>
   </div>
   </header>
 	
 	<!-- Post Content Section -->
   <section class="post-content">
    <p class="content"> 
-		"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    <%= question.description %>
 		</p>
    <div class="stats">
     <span clas="likes"> 100 Likes </span>
     <span class="comments"> . 10 Comments</span>
    </div>
    <div class="post-controls">
-    <button class="review"> <i class="fa fa-thumbs-up" aria-hidden="true"></i> Upvote</button>
+    <button class="review"> <i class="fa fa-thumbs-up" aria-hidden="true"></i> Upvote </button>
     <button class="review"> <i class="fa fa-comment" aria-hidden="true"></i> Comment </button>
     <button class="review"> <i class="fa fa-thumbs-down" aria-hidden="true"></i> Downvote</button>
    </div>
@@ -37,9 +38,10 @@
    <img src="https://avatars1.githubusercontent.com/u/1109686?v=4&s=460" class="avatar" alt="Post avatar" />
   </figure>
     <div class="content">
-			<span class="user"> Sabarinathan Masilamani </span>
-      <span class="text"> More to come this week. Applying CSS and Design skills. </span>
-      <h5 class="updated"> 8hr. </h5>
+      <%= console.log(question.replies) %>
+			<span class="user"> <%= question.replies.user %></span>
+      <span class="text"> <%= question.replies.text %> </span>
+      <h5 class="updated"> <%= question.replies.createdAt %> </h5>
     </div>
    </div>
 		

@@ -10,7 +10,7 @@
    <img src="https://avatars1.githubusercontent.com/u/1109686?v=4&s=460" class="avatar" alt="Post avatar" />
   </figure>
   <div class="content">
-   <h3> <%= question.creator %></h3>
+   <h3> <%= question.creator.displayName %></h3>
    <h3><%= question.title %></h3>
   </div>
   </header>
@@ -26,7 +26,7 @@
    </div>
    <div class="post-controls">
     <button class="review"> <i class="fa fa-thumbs-up" aria-hidden="true"></i> Upvote</button>
-    <a class="review" href="/search/<%= question._id %>"> <i class="fa fa-comment" aria-hidden="true"></i> Comment </a>
+    <a class="review" href="/question/search/<%= question._id %>"> <i class="fa fa-comment" aria-hidden="true"></i> Comment </a>
     <button class="review"> <i class="fa fa-thumbs-down" aria-hidden="true"></i> Downvote</button>
    </div>
   </section>
