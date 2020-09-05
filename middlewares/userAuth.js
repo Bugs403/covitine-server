@@ -3,6 +3,7 @@ const config = require("../config/config");
 
 module.exports = async (req, res, next) => {
   try {
+  //  if(req.rawHeaders.slice(-1)[0].slice(11))
     const token = req.rawHeaders.slice(-1)[0].slice(11);
     const decodedToken = jwt.verify(token, config.JWT_SECRET);
     req.user = {
@@ -12,6 +13,6 @@ module.exports = async (req, res, next) => {
     console.log("authorization complete");
     next();
   } catch (error) {
-    res.status(401).json({ message: "Auth failed" });
+    res.status(401).json({ message: "Auth failed",cookie: req.rawHeaders});
   }
 };
