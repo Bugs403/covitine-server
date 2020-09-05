@@ -23,7 +23,7 @@ QuestionHandler.getQuestion = async (req, res) => {
     try {
         const question = await Question.findQuestion(req.params.id);
         // res.status(200).json(question)
-        res.render("singlePage", {question: question});
+        res.render("singlePost", {question: question});
     } catch (err) {
         const status = err.status || 500;
         const message = err.message || 'Something went wrong';
