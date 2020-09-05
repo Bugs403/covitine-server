@@ -12,7 +12,7 @@ const questionRoutes = require('./routes/questionRoutes');
 const replyRoutes = require('./routes/replyRoutes')
 
 // INITIALIZED MODELS
-require('./models/question');
+const Question = require('./models/question');
 require('./models/reply');
 require('./models/user')
 
@@ -48,8 +48,16 @@ app.get('/', (req, res)=>{
 });
 
 app.get('/posts', (req,res)=>{
-  res.render("post")
+  Question.find({}, (err, questions)=>{
+    if(err){
+      console.log(err);
+    }else{
+      res.render("posts", {questions: questions});
+    }
+  })
+ 
 });
+
 
 app.listen(PORT, () => {
   console.log("Server is listening at port " + PORT);
