@@ -12,7 +12,7 @@
                     <h2>Register Here</h2>
                 </div>
                 <div class="row">
-                    <form action="/user/Register" method="POST"  class="form-group">
+                    <form action="/user/register" method="POST"  class="form-group">
                         <div class="row">
                             <input type="text" name="displayName" id="name" class="form__input" placeholder="Full Name">
                         </div>
@@ -36,9 +36,11 @@
     </div>
 </div>
 <!-- Footer -->
+
 <div class="container-fluid text-center footer">
-    
+    <%= error %>
 </div>
+
 
 
 <%- include ('partials/footer') %>
