@@ -4,7 +4,8 @@ const config = require("../config/config");
 module.exports = async (req, res, next) => {
   try {
   //  if(req.rawHeaders.slice(-1)[0].slice(11))
-    const token = req.rawHeaders.slice(-1)[0].slice(11);
+    const index = req.rawHeaders.findIndex(val => val == "Cookies")
+    const token = req.rawHeaders[index+1].slice(11);
     const decodedToken = jwt.verify(token, config.JWT_SECRET);
     req.user = {
       _id: decodedToken._id,
