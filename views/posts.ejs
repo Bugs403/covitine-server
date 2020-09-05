@@ -3,7 +3,7 @@
 
 <div class="layout">
     <div class="post ask">
-        <form action="/question/ask" method="POST" class="text-center">
+        <form action="/question/ask" method="POST" class=" form text-center">
             <h2>Troubled? Ask here.</h2>
 
             <div class="">
@@ -48,9 +48,14 @@
     <span class="comments"> . 10 Comments</span>
    </div>
    <div class="post-controls">
-    <button class="review"> <i class="fa fa-thumbs-up" aria-hidden="true"></i> Upvote</button>
+       <form action="/question/upvote/<%= question._id %>" method="POST" style="display: inline;">
+        <button class="review" type="submit"> <i class="fa fa-thumbs-up" aria-hidden="true"></i> Upvote</button>
+       </form>
     <a class="review" href="/question/search/<%= question._id %>"> <i class="fa fa-comment" aria-hidden="true"></i> Comment </a>
-    <button class="review"> <i class="fa fa-thumbs-down" aria-hidden="true"></i> Downvote</button>
+      <form action="/question/downvote/<%= question._id %>" method="POST" style="display: inline;">
+        <button class="review"> <i class="fa fa-thumbs-down" aria-hidden="true"></i> Downvote</button>
+      </form>
+      
    </div>
   </section>
 

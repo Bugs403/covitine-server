@@ -42,6 +42,7 @@ QuestionHandler.upVote = async (req, res) => {
     try {
         const question = await Question.voteQuestion(req.params.id, req.user._id, true)
         res.status(200).json(question)
+        console.log("upvoted")
     } catch (err) {
         const status = err.status || 500;
         const message = err.message || 'Something went wrong';
