@@ -7,11 +7,15 @@ QuestionHandler.askQuestion = async (req, res) => {
         const {
             title,
             description,
-            tags
+            tag1,
+            tag2,
+            tag3
         } = req.body
+        console.log(req.body);
+        const tags = [tag1+tag2+tag3]
         const question = await Question.create(title, description, tags, req.user._id);
         // res.status(200).json(question)
-        res.redirect("/question")
+        res.redirect("/question");
     } catch (err) {
         const status = err.status || 500;
         const message = err.message || 'Something went wrong';

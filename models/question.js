@@ -47,7 +47,7 @@ Question.create = async (title, description, tags, creator) => {
       throw errorCreator(err.message, 500);
     }
   } else {
-    throw errorCreator("Mission required fields", 400);
+    throw errorCreator("missing required fields", 400);
   }
 };
 Question.edit = async (id, title, description, tags) => {
@@ -82,7 +82,7 @@ Question.edit = async (id, title, description, tags) => {
       throw errorCreator("Nothing passed to change", 400);
     }
   } else {
-    throw errorCreator("Mission required fields", 400);
+    throw errorCreator("missing required fields", 400);
   }
 };
 Question.deleteQuestion = async id => {
@@ -96,7 +96,7 @@ Question.deleteQuestion = async id => {
       throw errorCreator(err.message, 500);
     }
   } else {
-    throw errorCreator("Mission required fields", 400);
+    throw errorCreator("missing required fields", 400);
   }
 };
 
@@ -113,7 +113,7 @@ Question.findQuestion = async id => {
       throw errorCreator(err.message, 500);
     }
   } else {
-    throw errorCreator("Mission required fields", 400);
+    throw errorCreator("missing required fields", 400);
   }
 };
 //{title:new RegExp(req.query.search || "", 'i')}
@@ -156,7 +156,7 @@ Question.addReply = async (questionId, replyId) => {
       throw errorCreator(err.message, 500);
     }
   } else {
-    throw errorCreator("Mission required fields", 400);
+    throw errorCreator("missing required fields", 400);
   }
 };
 
@@ -186,7 +186,7 @@ Question.removeReply = async (questionId, replyId) => {
       throw errorCreator(err.message, 500);
     }
   } else {
-    throw errorCreator("Mission required fields", 400);
+    throw errorCreator("missing required fields", 400);
   }
 };
 Question.voteQuestion = async (questionId, userId, voteType) => {
@@ -222,7 +222,7 @@ Question.voteQuestion = async (questionId, userId, voteType) => {
       throw errorCreator(err.message, 500);
     }
   } else {
-    throw errorCreator("Mission required fields", 400);
+    throw errorCreator("missing required fields", 400);
   }
 };
 module.exports = Question;
