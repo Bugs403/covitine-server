@@ -5,6 +5,9 @@
 	margin: 5em auto;
 	display: flex;
 }
+.main-content a{
+	text-decoration: none;
+}
 .company__info{
 	background-color: #008080;
 	border-top-left-radius: 20px;
