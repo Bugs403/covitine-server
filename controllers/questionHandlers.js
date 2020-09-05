@@ -10,7 +10,8 @@ QuestionHandler.askQuestion = async (req, res) => {
             tags
         } = req.body
         const question = await Question.create(title, description, tags, req.user._id);
-        res.status(200).json(question)
+        // res.status(200).json(question)
+        res.redirect("/question")
     } catch (err) {
         const status = err.status || 500;
         const message = err.message || 'Something went wrong';
