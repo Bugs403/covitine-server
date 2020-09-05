@@ -54,7 +54,7 @@ app.get('/question', (req,res)=>{
     }else{
       res.render("posts", {questions: questions});
     }
-  })
+  });
  
 });
 

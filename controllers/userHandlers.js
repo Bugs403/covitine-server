@@ -20,7 +20,7 @@ UserHandler.register = async (req, res) => {
         );
         user.token = token
         // res.status(200).json(user);
-        res.redirect("/posts");
+        res.redirect("/question");
     } catch (err) {
         const status = err.status || 500;
         const message = err.message || 'Something went wrong';
@@ -48,7 +48,7 @@ UserHandler.login = async (req, res) => {
         );
         user.token = token
         // res.status(200).json(user);
-        res.redirect("/posts");
+        res.redirect("/question");
     } catch (err) {
         const status = err.status || 500;
         const message = err.message || 'Something went wrong';

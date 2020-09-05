@@ -9,6 +9,7 @@
    <img src="https://avatars1.githubusercontent.com/u/1109686?v=4&s=460" class="avatar" alt="Post avatar" />
   </figure>
   <div class="content">
+    <%= console.log(question) %>
    <h3> <%= question.creator.displayName %> </h3>
    <h4><%= question.title %></h4>
   </div>
@@ -30,6 +31,8 @@
    </div>
   </section>
 
+
+  <% question.replies.forEach(function(reply){%>
 	<!-- Post Comments Section -->
   <section class="post-comment-feed">
  	
@@ -38,10 +41,10 @@
    <img src="https://avatars1.githubusercontent.com/u/1109686?v=4&s=460" class="avatar" alt="Post avatar" />
   </figure>
     <div class="content">
-      
-			<span class="user"> <%= question.replies.user %></span>
-      <span class="text"> <%= question.replies.text %> </span>
-      <h5 class="updated"> <%= question.replies.createdAt %> </h5>
+      <%= console.log(reply) %>
+			<span class="user"> <%= reply.user.displayName %></span><br>
+      <span class="text"> <%= reply.text %> </span>
+      <h5 class="updated"> <%= reply.createdAt %> </h5>
     </div>
    </div>
 		
@@ -57,5 +60,6 @@
 
 </article>
 </div>
+<%  }); %>
 
 <%- include ('partials/footer') %>

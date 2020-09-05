@@ -3,6 +3,10 @@
 	 font-family: "PT Sans", sans-serif;
 	 
 }
+ .ask{
+	border-top: 10px solid rgba(66, 176, 250, 0.5);
+}
+
 /* CSS Resets */
  aside, section, p, div, h1, h2, h3, h4, h5, h6 {
 	 margin: 0;
