@@ -43,6 +43,7 @@ app.use('/user',userRoutes);
 app.use('/question',questionRoutes);
 app.use('/reply',replyRoutes);
 
+
 app.get('/', (req, res)=>{
   res.render("landing");
 });
