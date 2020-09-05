@@ -1,0 +1,180 @@
+@import url(https://fonts.googleapis.com/css?family=PT+Sans);
+ body {
+	 font-family: "PT Sans", sans-serif;
+	 
+}
+a:hover{
+	text-decoration: none;
+}
+ .ask{
+	border-top: 10px solid rgba(66, 176, 250, 0.5);
+}
+
+/* CSS Resets */
+ aside, section, p, div, h1, h2, h3, h4, h5, h6 {
+	 margin: 0;
+	 padding: 0;
+}
+ aside {
+	 display: block;
+}
+/* Common Styles */
+ .review{
+	 background-color: #fff;
+	 padding: 10px;
+	 color: #191919;
+	 font-weight: bold;
+	 border: none;
+	 border-radius: 3px;
+	 margin: 2px;
+}
+ .review:hover {
+	 color: #fff;
+	 cursor: pointer;
+	 outline: none;
+	 background-color: rgba(128, 197, 201 ,1);
+}
+/* Custom Styles */
+ .layout {
+	 display: flex;
+	 flex-direction: row;
+	 align-items: center;
+	 justify-content: center;
+	 margin-top: 3%;
+}
+ aside {
+	 color: #fff;
+	 width: 20%;
+	 text-align: center;
+	 padding: 0 5%;
+}
+ aside .desc {
+	 font-size: 0.8rem;
+}
+ .post {
+	 background: #fff;
+	 box-shadow: 0 30px 50px -20px rgba(14, 0, 47, 0.21);
+	 width: 500px;
+	 color: #191919;
+	 display: flex;
+	 flex-direction: column;
+	 margin: 0;
+}
+ .post .info {
+	 padding: 10px 20px;
+	 margin: 0;
+	 border-bottom: 1px solid #d4d4d4;
+}
+ .post .info .user {
+	 font-weight: bold;
+	 text-decoration: none;
+	 color: #191919;
+}
+ .post .post-header {
+	 padding: 10px 20px 0;
+	 display: flex;
+	 flex-direction: row;
+	 width: 100%;
+	 justify-content: flex-start;
+}
+ .post .post-header .content {
+	 width: 90%;
+	 padding: 8px 0;
+}
+ .post .post-header .content .title, .post .post-header .content .updated {
+	 color: #a4a5a5;
+	 font-size: 0.9rem;
+	 font-weight: normal;
+}
+ .post .post-header .avatar-wrapper {
+	 width: 15%;
+	 padding: 10px 0;
+	 margin: 0;
+}
+ .post .post-header .avatar-wrapper .avatar {
+	 width: 60px;
+	 height: 60px;
+	 border-radius: 50%;
+}
+ .post .post-content {
+	 margin: 0;
+	 padding: 10px 20px 5px;
+	 color: #181818;
+}
+ .post .post-content .stats {
+	 padding: 10px 0;
+	 color: #a4a5a5;
+	 font-size: 0.8rem;
+	 font-weight: normal;
+	 border-bottom: 1px solid #d5d5d5;
+}
+ .post .post-comment-feed {
+	 background: rgba(164, 226, 230,0.5);
+	 padding: 20px;
+}
+ .post .post-comment-feed .add-comment, .post .post-comment-feed .comment {
+	 display: flex;
+	 flex-direction: row;
+	 justify-content: flex-start;
+	 margin-bottom: 10px;
+}
+ .post .post-comment-feed .add-comment .avatar-wrapper, .post .post-comment-feed .comment .avatar-wrapper {
+	 margin: 0;
+	 padding: 0;
+}
+ .post .post-comment-feed .add-comment .avatar, .post .post-comment-feed .comment .avatar {
+	 width: 30px;
+	 height: 30px;
+	 border: 1px solid #fff;
+	 border-radius: 50%;
+}
+ .post .post-comment-feed .add-comment .textfield, .post .post-comment-feed .comment .content {
+	 padding: 0 10px;
+}
+ .post .post-comment-feed .comment .content .user {
+	 font-weight: bold;
+	 font-size: 0.9rem;
+}
+ .post .post-comment-feed .comment .content .text {
+	 font-size: 0.9rem;
+	 color: #181818;
+}
+ .post .post-comment-feed .comment .content .updated {
+	 font-size: 0.8rem;
+	 color: #181818;
+	 font-weight: normal;
+}
+ .post .post-comment-feed .add-comment .textfield {
+	 background: #fff;
+	 margin-left: 10px;
+	 padding-right: 0;
+	 border: 1px solid #f4f4d4;
+}
+ .post .post-comment-feed .add-comment .textfield::before {
+	 position: absolute;
+	 content: "";
+	 width: 0;
+	 height: 0;
+	 border-left: none;
+	 border-top: 10px solid transparent;
+	 border-bottom: 10px solid transparent;
+	 border-right: 10px solid #fff;
+	 margin-left: -18px;
+	 margin-top: 5px;
+}
+ .post .post-comment-feed .add-comment .textfield .btn {
+	 font-size: 1rem;
+	 padding: 5px;
+}
+ .post .post-comment-feed .add-comment .textfield .btn:hover {
+	 background: none;
+	 color: #192e4d;
+}
+ .post .post-comment-feed .add-comment .textfield input[type="text"] {
+	 border: none;
+	 font-size: 0.8rem;
+	 width: 350px;
+	 outline: none;
+	 line-height: 1rem;
+}
+ 

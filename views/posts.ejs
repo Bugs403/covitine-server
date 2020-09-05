@@ -1,0 +1,66 @@
+<%- include ('partials/header') %>
+
+
+<div class="layout">
+    <div class="post ask">
+        <form action="/question/ask" method="POST" class="text-center">
+            <h2>Troubled? Ask here.</h2>
+
+            <div class="">
+                <input type="text" name="title"  class="form__input m-2" placeholder="Title" required>
+            </div>
+            <div class="">
+                <textarea type="text" name="description" class="form__input m-2" placeholder="Ask your question.." rows="5" required></textarea>
+            </div>
+            <div class="text-center">
+                <input type="text" name="tag[0]"  class="form__input mb-2" placeholder="Tag" style="width:30%;">
+                <input type="text" name="tag[1]"  class="form__input mb-2" placeholder="Tag" style="width:30%;">
+                <input type="text" name="tag[2]"  class="form__input mb-2" placeholder="Tag" style="width:30%;">
+            </div>
+            <div class="text-center">
+                <input type="submit" value="Ask" class="btn mb-3">
+            </div>
+        </form>
+    </div>
+</div>
+
+<% questions.forEach(function(question){%>
+<div class="layout">
+<article class="post">
+	<!-- Post Header -->
+ <header class="post-header">
+  <figure class="avatar-wrapper">
+   <img src="https://avatars1.githubusercontent.com/u/1109686?v=4&s=460" class="avatar" alt="Post avatar" />
+  </figure>
+  <div class="content">
+   <h3> <%= question.creator%></h3>
+   <h4><%= question.title %></h4>
+  </div>
+  </header>
+	
+	<!-- Post Content Section -->
+  <section class="post-content">
+   <p class="content"> 
+    <%= question.description.substring(0, 150) %>
+		</p>
+   <div class="stats">
+    <span clas="likes"> 100 Likes </span>
+    <span class="comments"> . 10 Comments</span>
+   </div>
+   <div class="post-controls">
+    <button class="review"> <i class="fa fa-thumbs-up" aria-hidden="true"></i> Upvote</button>
+    <a class="review" href="/question/search/<%= question._id %>"> <i class="fa fa-comment" aria-hidden="true"></i> Comment </a>
+    <button class="review"> <i class="fa fa-thumbs-down" aria-hidden="true"></i> Downvote</button>
+   </div>
+  </section>
+
+
+
+</article>
+</div>
+
+<%  }); %>
+
+
+
+<%- include ('partials/footer') %>

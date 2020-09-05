@@ -20,7 +20,7 @@ UserHandler.register = async (req, res) => {
         );
         user.token = token
         // res.status(200).json(user);
-        res.redirect("/posts");
+        res.redirect("/question");
     } catch (err) {
         const status = err.status || 500;
         const message = err.message || 'Something went wrong';
@@ -47,17 +47,10 @@ UserHandler.login = async (req, res) => {
             { expiresIn: "2400h" }
         );
         user.token = token
-<<<<<<< HEAD
-        console.log(res);
-        //res.headers['set-cookies'] = token;
-        res.status(200)
-        .cookie('set-cookie',  token, {
-            expires: new Date(Date.now() + 8 * 3600000) // cookie will be removed after 8 hours
-          }).json(user);
-=======
         // res.status(200).json(user);
-        res.redirect("/posts");
->>>>>>> 3a86ace0e0bb0679da36a6d13ce6cffadde31be2
+        res.cookie('set-cookie',  token, {
+            expires: new Date(Date.now() + 8 * 3600000) // cookie will be removed after 8 hours
+          }).redirect("/question");
     } catch (err) {
         const status = err.status || 500;
         const message = err.message || 'Something went wrong';

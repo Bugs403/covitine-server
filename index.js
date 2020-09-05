@@ -12,7 +12,7 @@ const questionRoutes = require('./routes/questionRoutes');
 const replyRoutes = require('./routes/replyRoutes')
 
 // INITIALIZED MODELS
-require('./models/question');
+const Question = require('./models/question');
 require('./models/reply');
 require('./models/user')
 
@@ -47,9 +47,20 @@ app.get('/', (req, res)=>{
   res.render("landing");
 });
 
-app.get('/posts', (req,res)=>{
-  res.render("post")
+app.get('/question', (req,res)=>{
+  try{
+        const search = req.query.search;
+        const pageSize = req.query.pagesize;
+        const currentPage = req.query.page;
+        const questions = await Question.searchQuestion(search, pageSize, currentPage);
+        res.render("posts", {questions: questions});
+       
+  }catch(err){
+    console.log(err);
+  }
+ 
 });
+
 
 app.listen(PORT, () => {
   console.log("Server is listening at port " + PORT);
