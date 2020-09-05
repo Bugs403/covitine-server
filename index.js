@@ -47,7 +47,7 @@ app.get('/', (req, res)=>{
   res.render("landing");
 });
 
-app.get('/posts', (req,res)=>{
+app.get('/question', (req,res)=>{
   Question.find({}, (err, questions)=>{
     if(err){
       console.log(err);
