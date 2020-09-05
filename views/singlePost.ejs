@@ -1,7 +1,7 @@
 <%- include ('partials/header') %>
 
 
-<div class="layout">
+<div class="layout mb-4">
 <article class="post">
 	<!-- Post Header -->
  <header class="post-header">
@@ -9,7 +9,7 @@
    <img src="https://avatars1.githubusercontent.com/u/1109686?v=4&s=460" class="avatar" alt="Post avatar" />
   </figure>
   <div class="content">
-    <%= console.log(question) %>
+    
    <h3> <%= question.creator.displayName %> </h3>
    <h4><%= question.title %></h4>
   </div>
@@ -26,7 +26,7 @@
    </div>
    <div class="post-controls">
     <button class="review"> <i class="fa fa-thumbs-up" aria-hidden="true"></i> Upvote </button>
-    <button class="review"> <i class="fa fa-comment" aria-hidden="true"></i> Comment </button>
+    <a class="review disabled"> <i class="fa fa-comment" aria-hidden="true"></i> Comment </a>
     <button class="review"> <i class="fa fa-thumbs-down" aria-hidden="true"></i> Downvote</button>
    </div>
   </section>
@@ -41,7 +41,6 @@
    <img src="https://avatars1.githubusercontent.com/u/1109686?v=4&s=460" class="avatar" alt="Post avatar" />
   </figure>
     <div class="content">
-      
 			<span class="user"> <%= reply.user.displayName %></span><br>
       <span class="text"> <%= reply.text %> </span>
       <h5 class="updated"> <%= reply.createdAt %> </h5>
@@ -59,6 +58,10 @@
   </section>
 
 </article>
+</div>
+
+<div class="text-center">
+  <a href="/question"> <h3>Go back</h3></a>
 </div>
 
 

@@ -3,6 +3,9 @@
 	 font-family: "PT Sans", sans-serif;
 	 
 }
+a:hover{
+	text-decoration: none;
+}
  .ask{
 	border-top: 10px solid rgba(66, 176, 250, 0.5);
 }
