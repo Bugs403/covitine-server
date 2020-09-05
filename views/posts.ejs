@@ -1,0 +1,65 @@
+<%- include ('partials/header') %>
+
+
+<% questions.forEach(function(question){%>
+<div class="layout">
+<article class="post">
+	<!-- Post Header -->
+ <header class="post-header">
+  <figure class="avatar-wrapper">
+   <img src="https://avatars1.githubusercontent.com/u/1109686?v=4&s=460" class="avatar" alt="Post avatar" />
+  </figure>
+  <div class="content">
+   <h3> <%= question.creator %></h3>
+   <h3><%= question.title %></h3>
+  </div>
+  </header>
+	
+	<!-- Post Content Section -->
+  <section class="post-content">
+   <p class="content"> 
+    <%= question.description %>
+		</p>
+   <div class="stats">
+    <span clas="likes"> 100 Likes </span>
+    <span class="comments"> . 10 Comments</span>
+   </div>
+   <div class="post-controls">
+    <button class="review"> <i class="fa fa-thumbs-up" aria-hidden="true"></i> Upvote</button>
+    <button class="review"> <i class="fa fa-comment" aria-hidden="true"></i> Comment </button>
+    <button class="review"> <i class="fa fa-thumbs-down" aria-hidden="true"></i> Downvote</button>
+   </div>
+  </section>
+
+	<!-- Post Comments Section -->
+  <section class="post-comment-feed">
+ 	
+		<div class="comment">
+     <figure class="avatar-wrapper">
+   <img src="https://avatars1.githubusercontent.com/u/1109686?v=4&s=460" class="avatar" alt="Post avatar" />
+  </figure>
+    <div class="content">
+			<span class="user"> Sabarinathan Masilamani </span>
+      <span class="text"> More to come this week. Applying CSS and Design skills. </span>
+      <h5 class="updated"> 8hr. </h5>
+    </div>
+   </div>
+		
+   <div class="add-comment"> 
+				<figure class="avatar-wrapper">
+   <img src="https://avatars1.githubusercontent.com/u/1109686?v=4&s=460" class="avatar" alt="Post avatar" />
+  </figure>
+		 <div class="textfield">			 		
+					<input type="text" name="comment" placeholder="Add a comment"/>
+		 </div>
+		</div>
+  </section>
+
+</article>
+</div>
+
+<%  }); %>
+
+
+
+<%- include ('partials/footer') %>
