@@ -41,13 +41,13 @@
    <img src="https://avatars1.githubusercontent.com/u/1109686?v=4&s=460" class="avatar" alt="Post avatar" />
   </figure>
     <div class="content">
-      <%= console.log(reply) %>
+      
 			<span class="user"> <%= reply.user.displayName %></span><br>
       <span class="text"> <%= reply.text %> </span>
       <h5 class="updated"> <%= reply.createdAt %> </h5>
     </div>
    </div>
-		
+   <%  }); %>
    <div class="add-comment"> 
 				<figure class="avatar-wrapper">
    <img src="https://avatars1.githubusercontent.com/u/1109686?v=4&s=460" class="avatar" alt="Post avatar" />
@@ -60,6 +60,6 @@
 
 </article>
 </div>
-<%  }); %>
+
 
 <%- include ('partials/footer') %>
