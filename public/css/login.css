@@ -2,6 +2,7 @@
 	width: 50%;
 	box-shadow: 0 30px 50px -20px rgba(14, 0, 47, 0.21);	margin: 5em auto;
 	display: flex;
+	background-color:rgb(19, 108, 167) ;
 }
 .main-content a{
 	text-decoration: none;
