@@ -47,7 +47,7 @@ app.get('/', (req, res)=>{
   res.render("landing");
 });
 
-app.get('/question', (req,res)=>{
+app.get('/question', async (req,res)=>{
   try{
         const search = req.query.search;
         const pageSize = req.query.pagesize;
