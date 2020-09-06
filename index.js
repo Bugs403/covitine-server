@@ -34,7 +34,7 @@ app.get("/about-us",(req,res) => {
 });
 
 app.get("/info",(req,res) => {
-  res.render("Covitines/info");
+  res.render("info/index");
 });
 
 app.get("/work",(req,res) => {
