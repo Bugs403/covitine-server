@@ -59,6 +59,7 @@ QuestionHandler.downVote = async (req, res) => {
 
     } catch (err) {
         const status = err.status || 500;
+        res.redirect("/question")
         const message = err.message || 'Something went wrong';
         res.status(status).json({
             message

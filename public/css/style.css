@@ -283,6 +283,15 @@ a:hover{
 	 padding: 8px 0;
 }
 
+
+.post .post-header .content h3{
+
+	font-size:1rem;
+	font-weight: 400 !important;
+
+}
+
+
 .post .post-header .content .post-author{
 	font-size:1rem;
 	text-transform: capitalize;
@@ -317,13 +326,14 @@ a:hover{
 }
  .post .post-comment-feed {
 	 background: rgba(164, 226, 230,0.5);
-	 padding: 20px;
+	 
 }
  .post .post-comment-feed .add-comment, .post .post-comment-feed .comment {
 	 display: flex;
 	 flex-direction: row;
 	 justify-content: flex-start;
-	 margin-bottom: 10px;
+	 /* margin-bottom: 10px; */
+	 padding: 20px;
 }
  .post .post-comment-feed .add-comment .avatar-wrapper, .post .post-comment-feed .comment .avatar-wrapper {
 	 margin: 0;
@@ -338,6 +348,7 @@ a:hover{
  .post .post-comment-feed .add-comment .textfield, .post .post-comment-feed .comment .content {
 	 padding: 0 10px;
 }
+
  .post .post-comment-feed .comment .content .user {
 	 font-weight: bold;
 	 font-size: 0.9rem;
@@ -357,6 +368,26 @@ a:hover{
 	 padding-right: 0;
 	 border: 1px solid #f4f4d4;
 }
+
+
+.textfield .textfield-comment-input{
+
+	/* padding:1rem 0.5rem; */
+/* border-radius: 1rem; */
+	border:none;
+	outline:none;
+	/* background-color: #f7f7f7; */
+	/* box-shadow: 0.1rem 1rem 3rem rgba(0,0,0,0.1); */
+}
+
+
+.textfield .textfield-comment-btn{
+	height: 100%;
+	border:none;
+}
+
+
+
  .post .post-comment-feed .add-comment .textfield::before {
 	 position: absolute;
 	 content: "";

@@ -65,8 +65,11 @@
     <%= question.description.substring(0, 150) %>
 		</p>
    <div class="stats">
-    <span class="likes"> 100 Likes </span>
-    <span class="comments"> . 10 Comments</span>
+    <span class="likes"> 
+        <%= question.votes.filter(({type}) => type === true).length %>
+        Likes </span>
+    <span class="comments"> . 
+        <%= question.replies.length %> Comments</span>
    </div>
    <div class="post-controls">
        <form action="/question/upvote/<%= question._id %>" method="POST" style="display: inline;">

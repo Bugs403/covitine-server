@@ -2,66 +2,74 @@
 
 
 <div class="layout mb-4">
-<article class="post">
-	<!-- Post Header -->
- <header class="post-header">
-  <figure class="avatar-wrapper">
-   <img src="https://avatars1.githubusercontent.com/u/1109686?v=4&s=460" class="avatar" alt="Post avatar" />
-  </figure>
-  <div class="content">
-    
-   <h3> <%= question.creator.displayName %> </h3>
-   <h4><%= question.title %></h4>
-  </div>
-  </header>
-	
-	<!-- Post Content Section -->
-  <section class="post-content">
-   <p class="content"> 
-    <%= question.description %>
-		</p>
-   <div class="stats">
-    <span clas="likes"> 100 Likes </span>
-    <span class="comments"> . 10 Comments</span>
-   </div>
-   <div class="post-controls">
-    <button class="review"> <i class="fa fa-thumbs-up" aria-hidden="true"></i> Upvote </button>
-    <a class="review disabled"> <i class="fa fa-comment" aria-hidden="true"></i> Comment </a>
-    <button class="review"> <i class="fa fa-thumbs-down" aria-hidden="true"></i> Downvote</button>
-   </div>
-  </section>
+  <article class="post">
+    <!-- Post Header -->
+    <header class="post-header">
+      <figure class="avatar-wrapper">
+        <img src="https://avatars1.githubusercontent.com/u/1109686?v=4&s=460" class="avatar" alt="Post avatar" />
+      </figure>
+      <div class="content">
+
+        <h3> <%= question.creator.displayName %> </h3>
+        <h4><%= question.title %></h4>
+      </div>
+    </header>
+
+    <!-- Post Content Section -->
+    <section class="post-content">
+      <p class="content">
+        <%= question.description %>
+      </p>
+      <div class="stats">
+        <span clas="likes"> <%= question.votes.filter(({type}) => type === true).length %>
+          Likes </span>
+        <span class="comments"> .
+          <%= question.replies.length %>
+          Comments</span>
+      </div>
+      <div class="post-controls">
+        <button class="review"> <i class="fa fa-thumbs-up" aria-hidden="true"></i> Upvote </button>
+        <a class="review disabled"> <i class="fa fa-comment" aria-hidden="true"></i> Comment </a>
+        <button class="review"> <i class="fa fa-thumbs-down" aria-hidden="true"></i> Downvote</button>
+      </div>
+    </section>
 
 
-  <% question.replies.forEach(function(reply){%>
-	<!-- Post Comments Section -->
-  <section class="post-comment-feed">
- 	
-		<div class="comment">
-     <figure class="avatar-wrapper">
-   <img src="https://avatars1.githubusercontent.com/u/1109686?v=4&s=460" class="avatar" alt="Post avatar" />
-  </figure>
-    <div class="content">
-			<span class="user"> <%= reply.user.displayName %></span><br>
-      <span class="text"> <%= reply.text %> </span>
-      <h5 class="updated"> <%= reply.createdAt %> </h5>
-    </div>
-   </div>
-   <%  }); %>
-   <div class="add-comment"> 
-				<figure class="avatar-wrapper">
-   <img src="https://avatars1.githubusercontent.com/u/1109686?v=4&s=460" class="avatar" alt="Post avatar" />
-  </figure>
-		 <div class="textfield">			 		
-					<input type="text" name="comment" placeholder="Add a comment"/>
-		 </div>
-		</div>
-  </section>
+    <% question.replies.forEach(function(reply){%>
+    <!-- Post Comments Section -->
+    <section class="post-comment-feed">
 
-</article>
+      <div class="comment">
+        <figure class="avatar-wrapper">
+          <img src="https://avatars1.githubusercontent.com/u/1109686?v=4&s=460" class="avatar" alt="Post avatar" />
+        </figure>
+        <div class="content">
+          <span class="user"> <%= reply.user.displayName %></span><br>
+          <span class="text"> <%= reply.text %> </span>
+          <h5 class="updated"> <%= new Date(reply.createdAt).toDateString() %> </h5>
+        </div>
+      </div>
+      <%  }); %>
+      <div class="add-comment">
+        <figure class="avatar-wrapper">
+          <!-- <img src="https://avatars1.githubusercontent.com/u/1109686?v=4&s=460" class="avatar" alt="Post avatar" /> -->
+        </figure>
+        <form action="/reply" method="POST" class="textfield">
+          <input type="text" class="textfield-comment-input" name="text" placeholder="Add a comment" />
+          <input type="text" class="textfield-comment-input" style="display:none" name="questionId"
+            value="<%= question._id %>" />
+          <input class="textfield-comment-btn" type="submit" value="Send" />
+        </form>
+      </div>
+    </section>
+
+  </article>
 </div>
 
 <div class="text-center">
-  <a href="/question"> <h3>Go back</h3></a>
+  <a href="/question">
+    <h3>Go back</h3>
+  </a>
 </div>
 
 

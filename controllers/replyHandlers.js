@@ -9,7 +9,7 @@ ReplyHandler.giveReply = async (req, res) => {
             questionId
         } = req.body;
         const reply = await Reply.create(text, questionId,req.user._id);
-        res.status(200).json(reply)
+        res.redirect(`/question/search/${questionId}`);
     } catch (err) {
         const status = err.status || 500;
         const message = err.message || 'Something went wrong';
