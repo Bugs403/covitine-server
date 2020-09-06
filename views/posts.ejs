@@ -18,6 +18,8 @@
     </div>
 
     <div class="col-lg-4">
+    <% if(isCookie === true){ %>
+
 <div class="layout">
     <div class="post ask">
         <form action="/question/ask" method="POST" class=" form text-center">
@@ -39,7 +41,9 @@
             </div>
         </form>
     </div>
+
 </div>
+<% } %>
 
 <% questions.forEach(function(question){%>
 <div class="layout">
@@ -50,8 +54,8 @@
    <img src="https://avatars1.githubusercontent.com/u/1109686?v=4&s=460" class="avatar" alt="Post avatar" />
   </figure>
   <div class="content text-left">
-   <h3> <%= question.creator.displayName%></h3>
-   <h4><%= question.title %></h4>
+   <h3 class="post-author"> <%= question.creator.displayName%></h3>
+   <h4 class="post-title"><%= question.title[0].toUpperCase() + question.title.slice(1) %></h4>
   </div>
   </header>
 	
@@ -61,7 +65,7 @@
     <%= question.description.substring(0, 150) %>
 		</p>
    <div class="stats">
-    <span clas="likes"> 100 Likes </span>
+    <span class="likes"> 100 Likes </span>
     <span class="comments"> . 10 Comments</span>
    </div>
    <div class="post-controls">

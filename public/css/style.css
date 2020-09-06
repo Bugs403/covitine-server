@@ -252,12 +252,13 @@ a:hover{
 }
  .post {
 	 background: #fff;
-	 box-shadow: 0 30px 50px -20px rgba(14, 0, 47, 0.21);
+	 box-shadow: 0 10px 50px -20px rgba(14, 0, 47, 0.21);
 	 width: 500px;
 	 color: #191919;
 	 display: flex;
 	 flex-direction: column;
 	 margin: 0;
+	 border-radius: 0.5rem;
 }
  .post .info {
 	 padding: 10px 20px;
@@ -275,10 +276,16 @@ a:hover{
 	 flex-direction: row;
 	 width: 100%;
 	 justify-content: flex-start;
+	 align-items: center;
 }
  .post .post-header .content {
 	 width: 90%;
 	 padding: 8px 0;
+}
+
+.post .post-header .content .post-author{
+	font-size:1rem;
+	text-transform: capitalize;
 }
  .post .post-header .content .title, .post .post-header .content .updated {
 	 color: #a4a5a5;
@@ -291,8 +298,8 @@ a:hover{
 	 margin: 0;
 }
  .post .post-header .avatar-wrapper .avatar {
-	 width: 60px;
-	 height: 60px;
+	 width: 50px;
+	 height: 50px;
 	 border-radius: 50%;
 }
  .post .post-content {
@@ -300,6 +307,7 @@ a:hover{
 	 padding: 10px 20px 5px;
 	 color: #181818;
 }
+
  .post .post-content .stats {
 	 padding: 10px 0;
 	 color: #a4a5a5;

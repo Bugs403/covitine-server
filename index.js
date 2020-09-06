@@ -53,8 +53,10 @@ app.get('/question', async (req,res)=>{
         const search = req.query.search;
         const pageSize = req.query.pagesize;
         const currentPage = req.query.page;
+        const isCookie = req.rawHeaders.some(val => val === 'Cookie');
+        console.log(isCookie)
         const questions = await Question.searchQuestion(search, pageSize, currentPage);
-        res.render("posts", {questions: questions});
+        res.render("posts", {questions,isCookie});
        
   }catch(err){
     console.log(err);
