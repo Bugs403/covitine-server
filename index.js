@@ -17,11 +17,17 @@ require('./models/reply');
 require('./models/user')
 
 app.set("view engine", "ejs");
-//app.use(express.static(__dirname+"/Covitines"))
 app.use(express.static(__dirname+"/public"));
-// app.get("/",(req,res) => {
-//   res.render("/Covintines/index.html")
-// });
+app.use(express.static(__dirname+"/Covitines"))
+app.use(express.static(__dirname+"/Covitines/css"))
+app.use(express.static(__dirname+"/Covitines/font"))
+app.use(express.static(__dirname+"/Covitines/img"))
+
+
+
+app.get("/",(req,res) => {
+  res.render("Covitines/index.ejs");
+});
 app.use(cors());
 mongoose
   .connect(process.env.database || config.database, {
