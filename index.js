@@ -18,6 +18,7 @@ require('./models/user')
 
 app.set("view engine", "ejs");
 app.use(express.static(__dirname+"/public"));
+app.use("/root",express.static(__dirname+"/Covitines"));
 
 app.use(cors());
 mongoose
@@ -44,9 +45,6 @@ app.use('/question',questionRoutes);
 app.use('/reply',replyRoutes);
 
 
-app.get('/', (req, res)=>{
-  res.render("landing");
-});
 
 app.get('/question', async (req,res)=>{
   try{  
