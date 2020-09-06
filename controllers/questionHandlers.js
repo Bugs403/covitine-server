@@ -41,8 +41,7 @@ QuestionHandler.getQuestion = async (req, res) => {
 QuestionHandler.upVote = async (req, res) => {
     try {
         const question = await Question.voteQuestion(req.params.id, req.user._id, true)
-        res.status(200).json(question)
-        console.log("upvoted")
+        res.redirect("/question")
     } catch (err) {
         const status = err.status || 500;
         const message = err.message || 'Something went wrong';
@@ -56,7 +55,8 @@ QuestionHandler.upVote = async (req, res) => {
 QuestionHandler.downVote = async (req, res) => {
     try {
         const question = await Question.voteQuestion(req.params.id, req.user._id, false)
-        res.status(200).json(question)
+        res.redirect("/question")
+
     } catch (err) {
         const status = err.status || 500;
         const message = err.message || 'Something went wrong';
