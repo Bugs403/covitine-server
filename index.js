@@ -26,25 +26,25 @@ app.use(express.static(__dirname+"/Covitines/img"))
 
 
 app.get("/",(req,res) => {
-  res.render("Covitines/index.ejs");
+  res.render("Covitines/index");
 });
 
 app.get("/about-us",(req,res) => {
-  res.render("Covitines/About-Us.ejs");
+  res.render("Covitines/About-Us");
 });
 
 app.get("/info",(req,res) => {
-  res.render("Covitines/info.ejs");
+  res.render("Covitines/info");
 });
 
 app.get("/work",(req,res) => {
-  res.render("Covitines/work.ejs");
+  res.render("Covitines/work");
 });
 app.get("/idea",(req,res) => {
-  res.render("Covitines/idea.ejs");
+  res.render("Covitines/idea");
 });
 app.get("/aim",(req,res) => {
-  res.render("Covitines/ouraim.ejs");
+  res.render("Covitines/ouraim");
 });
 
 
