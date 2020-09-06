@@ -17,9 +17,11 @@ require('./models/reply');
 require('./models/user')
 
 app.set("view engine", "ejs");
-app.use(express.static(__dirname+"/public"));
-app.use("/root",express.static(__dirname+"/Covitines"));
-
+app.use(express.static(__dirname+"/Covitines"))
+app.use("/*",express.static(__dirname+"/public"));
+app.get("/",(req,res) => {
+  res.render("index.html")
+});
 app.use(cors());
 mongoose
   .connect(process.env.database || config.database, {
