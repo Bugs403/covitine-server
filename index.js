@@ -28,6 +28,26 @@ app.use(express.static(__dirname+"/Covitines/img"))
 app.get("/",(req,res) => {
   res.render("Covitines/index.ejs");
 });
+
+app.get("/about-us",(req,res) => {
+  res.render("Covitines/About-Us.ejs");
+});
+
+app.get("/info",(req,res) => {
+  res.render("Covitines/info.ejs");
+});
+
+app.get("/work",(req,res) => {
+  res.render("Covitines/work.ejs");
+});
+app.get("/idea",(req,res) => {
+  res.render("Covitines/idea.ejs");
+});
+app.get("/aim",(req,res) => {
+  res.render("Covitines/ouraim.ejs");
+});
+
+
 app.use(cors());
 mongoose
   .connect(process.env.database || config.database, {
